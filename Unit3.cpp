@@ -23,22 +23,25 @@ void RecordingReadingData( void )
 if (!FileExists("E:\\data.txt"))//Если файл не создан, создаем файл
 {
   TStringList * LogFile = new TStringList;
-  LogFile->Add("My Report Text");
   LogFile->SaveToFile("E:\\data.txt");
   delete LogFile;
 }
 
-char* str = "Какой-то текст1";//Переменная с данными
-
+char* str ="Какой-то текст";//Переменная с данными
+char* str1 ="Какой-то текст1";
 FILE *file;
 char* file_name = "E:\\data.txt";//Открытие файла
 //char load_string[5000];
 
-file = fopen( file_name, "w" );//Запись в файл
+/*file = fopen( file_name, "w" );//Запись в файл
 
-//fputs("a", file );//Добавляем строку "string"
+//fputs("string", file );//Добавляем строку "string"
 
-fprintf(file, "%s\n", str);//Запись даных
+fprintf(file, "%s\n", str);//Запись данных */
+
+file = fopen( file_name, "a+" );//Дополнение данных, добавляет новые данные
+
+fprintf(file, "%s\n", str1);
 
 fclose( file );//Закрытие файла
 file = fopen( file_name, "r" );//Считывание файла
