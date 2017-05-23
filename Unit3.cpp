@@ -20,31 +20,31 @@ __fastcall TForm3::TForm3(TComponent* Owner)
 //---------------------------------------------------------------------------
 void RecordingReadingData( void )
 {
-if (!FileExists("E:\\data.txt"))//Если файл не создан, создаем файл
+if (!FileExists("E:\\data.txt"))//Р•СЃР»Рё С„Р°Р№Р» РЅРµ СЃРѕР·РґР°РЅ, СЃРѕР·РґР°РµРј С„Р°Р№Р»
 {
   TStringList * LogFile = new TStringList;
   LogFile->SaveToFile("E:\\data.txt");
   delete LogFile;
 }
 
-char* str ="Какой-то текст";//Переменная с данными
-char* str1 ="Какой-то текст1";
+char* str ="РљР°РєРѕР№-С‚Рѕ С‚РµРєСЃС‚";//РџРµСЂРµРјРµРЅРЅР°СЏ СЃ РґР°РЅРЅС‹РјРё
+char* str1 ="РљР°РєРѕР№-С‚Рѕ С‚РµРєСЃС‚1";
 FILE *file;
-char* file_name = "E:\\data.txt";//Открытие файла
+char* file_name = "E:\\data.txt";//РћС‚РєСЂС‹С‚РёРµ С„Р°Р№Р»Р°
 //char load_string[5000];
 
-/*file = fopen( file_name, "w" );//Запись в файл
+/*file = fopen( file_name, "w" );//Р—Р°РїРёСЃСЊ РІ С„Р°Р№Р»
 
-//fputs("string", file );//Добавляем строку "string"
+//fputs("string", file );//Р”РѕР±Р°РІР»СЏРµРј СЃС‚СЂРѕРєСѓ "string"
 
-fprintf(file, "%s\n", str);//Запись данных */
+fprintf(file, "%s\n", str);//Р—Р°РїРёСЃСЊ РґР°РЅРЅС‹С… */
 
-file = fopen( file_name, "a+" );//Дополнение данных, добавляет новые данные
+file = fopen( file_name, "a+" );//Р”РѕРїРѕР»РЅРµРЅРёРµ РґР°РЅРЅС‹С…, РґРѕР±Р°РІР»СЏРµС‚ РЅРѕРІС‹Рµ РґР°РЅРЅС‹Рµ
 
 fprintf(file, "%s\n", str1);
 
-fclose( file );//Закрытие файла
-file = fopen( file_name, "r" );//Считывание файла
+fclose( file );//Р—Р°РєСЂС‹С‚РёРµ С„Р°Р№Р»Р°
+file = fopen( file_name, "r" );//РЎС‡РёС‚С‹РІР°РЅРёРµ С„Р°Р№Р»Р°
 /*if( file != 0 )
 {
 fgets( load_string, 5000 , file );
@@ -54,7 +54,7 @@ else
 {
 cout << "File not found !!!" << endl;
 }*/
-fclose(file);//Закрытие файла
+fclose(file);//Р—Р°РєСЂС‹С‚РёРµ С„Р°Р№Р»Р°
 }
 
 
@@ -66,4 +66,3 @@ void __fastcall TForm3::Button1Click(TObject *Sender)
  RecordingReadingData();
 }
 //---------------------------------------------------------------------------
-
